@@ -43,6 +43,6 @@
       }
     }
   ],
-  "include": ["src", "*.js", "*.ts"],
+  "include": ["src", "*.js", "*.ts", "declarations.d.ts"],
   "exclude": ["node_modules"]
 }
