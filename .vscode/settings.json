@@ -2,7 +2,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "explicit"
   },
 
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
@@ -18,5 +19,8 @@
   "stylelint.config": {
     "extends": "./src/.stylelintrc"
   },
+  "stylelint.enable": true,
+  "stylelint.validate": ["css"],
+
   "prettier.configPath": "./src/.prettierrc"
 }
