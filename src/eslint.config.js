@@ -135,6 +135,8 @@ export default [
             'react-dom/client',
             '@consta/uikit/[a-zA-Z]*',
             '@consta/icons/[a-zA-Z]*',
+            'vitest/*',
+            '@testing-library/jest-dom/vitest',
             'assets/*',
             '__generated__/*',
           ],

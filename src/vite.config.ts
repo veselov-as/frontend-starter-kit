@@ -1,8 +1,10 @@
 import react from '@vitejs/plugin-react-swc'
-import { defineConfig } from 'vite'
+import path from 'path'
+import { defineConfig, mergeConfig } from 'vite'
+import { defineConfig as vitestDefineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
-export default defineConfig({
+const viteConfig = defineConfig({
   plugins: [react()],
   css: {
     modules: {
@@ -11,4 +13,23 @@ export default defineConfig({
     },
     devSourcemap: true,
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 })
+
+const vitestConfig = vitestDefineConfig({
+  test: {
+    include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+    environment: 'jsdom',
+    clearMocks: true,
+    setupFiles: './setupTest.js',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
+  },
+})
+
+export default mergeConfig(viteConfig, vitestConfig)
