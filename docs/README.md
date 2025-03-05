@@ -48,8 +48,6 @@ function Button() {
    cd src
   ```
 
-````
-
 - Устанавливаем зависимости
 
   ```bash
@@ -69,6 +67,28 @@ function Button() {
   ```bash
    cd ci/local
   ```
+
+- Создаем файл `.env`
+
+```env
+  #BASE
+  DOCKER_REGISTRY=
+  NODEJS_BASE_IMAGE=
+  NGINX_BASE_IMAGE=
+  FRONTEND_REGISTRY=https://registry.npmjs.org/
+
+  APP_VERSION="0.0.1"
+
+  # KEYCLOAK
+  KEYCLOAK_CLIENT_ID=""
+  KEYCLOAK_CODE=""
+  KEYCLOAK_REALM=""
+  KEYCLOAK_URL=""
+
+  # FRONTEND
+  API_HOST=host.docker.internal:8000
+  HOST_PROTOCOL="http"
+```
 
 - Запускаем билд образа
 
@@ -95,4 +115,3 @@ function Button() {
   ```
 
 ---
-````
