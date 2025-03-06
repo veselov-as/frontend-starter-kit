@@ -43,6 +43,6 @@
       }
     }
   ],
-  "include": ["src", "*.js", "*.ts", "declarations.d.ts"],
+  "include": ["./src/*", "./vite.config.ts"],
   "exclude": ["node_modules"]
 }
