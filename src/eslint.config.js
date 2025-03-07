@@ -1,19 +1,17 @@
-import globals from 'globals'
 import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
 import tsParser from '@typescript-eslint/parser'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import importPlugin from 'eslint-plugin-import'
+import prettierPlugin from 'eslint-plugin-prettier'
 import pluginReact from 'eslint-plugin-react'
-
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import importPlugin from 'eslint-plugin-import'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import prettierPlugin from 'eslint-plugin-prettier'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx']
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -21,7 +19,7 @@ export default [
   eslintConfigPrettier,
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    ignores: ['dist', 'node_modules', 'eslint.config.js'],
+    ignores: ['dist', 'node_modules'],
     languageOptions: {
       globals: globals.browser,
       ecmaVersion: 2020,
@@ -133,6 +131,7 @@ export default [
             '@consta/icons/[a-zA-Z]*',
             'vitest/*',
             '@testing-library/jest-dom/vitest',
+            '@tanstack/router-plugin/vite',
             'assets/*',
             '__generated__/*',
           ],
