@@ -1,4 +1,3 @@
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import { defineConfig, mergeConfig } from 'vite'
@@ -6,7 +5,7 @@ import { defineConfig as vitestDefineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 const viteConfig = defineConfig({
-  plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react()],
+  plugins: [react()],
   css: {
     modules: {
       generateScopedName: '[name]__[local]___[hash:base64:5]',
